@@ -52,7 +52,7 @@ const GetStarted = () => {
 
     try {
       const response = await fetch(
-        "https://weularity-backend-7akq5nmsy-jaithakur10s-projects.vercel.app/api/users",
+        "https://weularity-backend.vercel.app/api/users",
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
