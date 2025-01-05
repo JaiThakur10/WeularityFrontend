@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -51,27 +52,31 @@ const GetStarted = () => {
     }
 
     try {
-      const response = await fetch(
+      const res = await axios.post(
         "https://weularity-backend.vercel.app/api/users",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        }
+        formData
       );
+      // const response = await fetch(
+      //   "https://weularity-backend.vercel.app/api/users",
+      //   {
+      //     method: "POST",
+      //     headers: { "Content-Type": "application/json" },
+      //     body: JSON.stringify(formData),
+      //   }
+      //);
 
-      if (response.ok) {
-        const result = await response.json();
+      if (res) {
+        const data = res.data;
         alert("Form submitted successfully!");
-        console.log("Response from server:", result);
-      } else {
-        // Handle server errors (e.g., 500, 400, etc.)
-        const errorData = await response.json(); // Attempt to parse the error response
-        alert(
-          `Failed to submit the form: ${errorData.message || "Unknown error"}`
-        );
-        console.error("Server Error:", errorData);
-      }
+        console.log("Response from server:", data);
+      } // } else {
+      //   // Handle server errors (e.g., 500, 400, etc.)
+      //   const errorData = await response.json(); // Attempt to parse the error response
+      //   alert(
+      //     `Failed to submit the form: ${errorData.message || "Unknown error"}`
+      //   );
+      //   console.error("Server Error:", errorData);
+      // }
     } catch (error) {
       // Handle network errors (e.g., server is down, no connection)
       alert(
