@@ -50,11 +50,11 @@ function Testimonial() {
         viewport={{ once: true }}
         className="text-center"
       >
-        <h2 className="text-4xl font-extrabold drop-shadow-md">
+        <h2 className="text-5xl font-extrabold drop-shadow-md tracking-tight">
           What Our Clients Say
         </h2>
         <p className="text-gray-300 mt-4 text-lg">
-          Hear from our clients who’ve experienced our dedication and expertise.
+          Discover how we’ve made a difference for our clients.
         </p>
       </motion.div>
 
@@ -116,3 +116,12 @@ function Testimonial() {
 }
 
 export default Testimonial;
+
+{
+  /* <h2 className="text-5xl font-extrabold drop-shadow-md tracking-tight">
+          What Our Clients Say
+        </h2>
+        <p className="text-gray-300 mt-4 text-lg">
+          Discover how we’ve made a difference for our clients.
+        </p> */
+}

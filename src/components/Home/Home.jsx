@@ -9,6 +9,7 @@ import Testimonial from "../Testimonial/Testimonial";
 import Contact from "../Contact/Contact";
 import Footer from "../Footer/Footer";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
+import Hit from "../Hit.jsx/Hit";
 
 export default function Home() {
   return (
@@ -112,11 +113,10 @@ export default function Home() {
       {/* whychooseus */}
       <WhyChooseUs />
 
-      {/* Contact */}
-      <Contact />
+      <Hit />
 
-      {/* footer */}
-      <Footer />
+      {/* Contact */}
+      {/* <Contact /> */}
     </div>
   );
 }
