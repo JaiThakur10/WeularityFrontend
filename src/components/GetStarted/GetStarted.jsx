@@ -536,10 +536,10 @@ const GetStarted = () => {
     }
   };
 
-  const onCaptchaChange = (value) => {
-    console.log("ReCAPTCHA value:", value);
-    setVerified(!!value);
-  };
+  // const onCaptchaChange = (value) => {
+  //   console.log("ReCAPTCHA value:", value);
+  //   setVerified(!!value);
+  // };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col sm:flex-row">
@@ -625,7 +625,7 @@ const GetStarted = () => {
           </div>
 
           {/* ReCAPTCHA */}
-          <div>
+          {/* <div>
             <ReCAPTCHA
               sitekey="your-site-key"
               onChange={onCaptchaChange}
@@ -634,7 +634,7 @@ const GetStarted = () => {
             {errors.captcha && (
               <p className="text-red-500 text-sm mt-2">{errors.captcha}</p>
             )}
-          </div>
+          </div> */}
 
           {/* Submit Button */}
           <button
