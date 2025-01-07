@@ -57,10 +57,14 @@ export default function Home() {
             animate={{ scale: 1 }}
             transition={{ duration: 0.8 }}
           >
-            Crafting Stunning Websites & Digital Experiences
+            Crafting Stunning{" "}
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+              Website
+            </span>
+            & Digital Experiences
           </motion.h1>
           <motion.p
-            className="text-sm md:text-lg md:ml-4  text-white mt-6 leading-relaxed"
+            className="text-sm md:text-lg md:ml-6 md:px-8 text-white mt-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}

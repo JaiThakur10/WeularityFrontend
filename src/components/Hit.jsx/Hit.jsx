@@ -40,14 +40,14 @@ function Hit() {
       {/* Background Animation */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Moving Gradient Blobs */}
-        <motion.div
+        {/* <motion.div
           className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-2xl"
           animate={{
-            y: [0, -50, 0], // Vertical movement
-            x: [0, 50, 0], // Horizontal movement
+            y: [0, -300, 0], // Vertical movement
+            x: [0, 300, 0], // Horizontal movement
           }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
-        ></motion.div>
+        ></motion.div> */}
 
         {/* <motion.div
           className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-500 to-teal-500 opacity-30 rounded-full blur-3xl"
@@ -58,11 +58,14 @@ function Hit() {
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
         ></motion.div> */}
 
-        <motion.div
+        {/* <motion.div
           className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-tr from-yellow-500 to-red-500 opacity-20 rounded-full blur-2xl"
-          animate={{ rotate: [0, 360] }}
+          animate={{
+            y: [0, -50, 0], // Vertical movement
+            x: [0, 50, 0], // Horizontal movement
+          }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        ></motion.div>
+        ></motion.div> */}
 
         {/* Starry Background */}
         <div className="absolute inset-0">
@@ -93,7 +96,11 @@ function Hit() {
           transition={{ duration: 1 }}
           className="text-6xl font-extrabold tracking-tight drop-shadow-md"
         >
-          Your Dream Website, Delivered
+          Your Dream{" "}
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Website
+          </span>
+          , Delivered
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
