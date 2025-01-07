@@ -60,7 +60,7 @@ export default function Home() {
             Crafting Stunning Websites & Digital Experiences
           </motion.h1>
           <motion.p
-            className="text-sm md:text-lg md:ml-4 text-white mt-6 leading-relaxed"
+            className="text-sm md:text-lg md:ml-4  text-white mt-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -74,7 +74,7 @@ export default function Home() {
             whileHover={{ scale: 1.1 }}
           >
             <motion.button
-              className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-8 rounded-lg shadow-lg"
+              className="bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white py-3 px-8 rounded-lg shadow-lg"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
             >

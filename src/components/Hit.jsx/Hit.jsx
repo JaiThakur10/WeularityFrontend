@@ -1,3 +1,34 @@
+// import React from "react";
+// import { motion } from "framer-motion";
+
+// function Hit() {
+//   return (
+//     <div className="relative min-h-screen bg-black overflow-hidden">
+//       {/* Blob 1 */}
+//       <motion.div
+//         className="absolute top-0 left-0 w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-100 rounded-full"
+//         animate={{
+//           y: [0, -50, 0],
+//           x: [0, 50, 0],
+//         }}
+//         transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+//       ></motion.div>
+
+//       {/* Blob 2 */}
+//       <motion.div
+//         className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-500 to-teal-500 opacity-100 rounded-full"
+//         animate={{
+//           y: [0, 50, 0],
+//           x: [0, -50, 0],
+//         }}
+//         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+//       ></motion.div>
+//     </div>
+//   );
+// }
+
+// export default Hit;
+
 import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
@@ -7,10 +38,10 @@ function Hit() {
   return (
     <div className="bg-black text-white min-h-screen flex flex-col relative overflow-hidden">
       {/* Background Animation */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden">
         {/* Moving Gradient Blobs */}
         <motion.div
-          className="absolute top-0 left-0 w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-2xl"
+          className="absolute bottom-10 left-10 w-[300px] h-[300px] bg-gradient-to-r from-purple-500 to-pink-500 opacity-30 rounded-full blur-2xl"
           animate={{
             y: [0, -50, 0], // Vertical movement
             x: [0, 50, 0], // Horizontal movement
@@ -18,14 +49,14 @@ function Hit() {
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
         ></motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-blue-500 to-teal-500 opacity-30 rounded-full blur-3xl"
           animate={{
-            y: [0, 50, 0],
-            x: [0, -50, 0],
+            y: [0, 50, 0], // Vertical movement
+            x: [0, -50, 0], // Horizontal movement
           }}
           transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
-        ></motion.div>
+        ></motion.div> */}
 
         <motion.div
           className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-[400px] h-[400px] bg-gradient-to-tr from-yellow-500 to-red-500 opacity-20 rounded-full blur-2xl"
@@ -89,6 +120,9 @@ function Hit() {
             Learn More
           </Button>
         </motion.div>
+        <h1 className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mt-4">
+          Gradient Text
+        </h1>
       </header>
 
       {/* Call to Action Section */}
