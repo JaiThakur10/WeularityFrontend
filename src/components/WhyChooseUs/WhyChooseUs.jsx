@@ -15,7 +15,11 @@ export default function WhyChooseUs() {
           transition={{ duration: 1 }}
         >
           <h1 className="text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
-            Why <span className="text-purple-500">Choose</span> Us?
+            Why{" "}
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+              Choose
+            </span>{" "}
+            Us?
           </h1>
           <p className="text-lg lg:text-xl text-gray-300 mb-8">
             We are not just a service provider; we are your partner in crafting
@@ -125,15 +129,18 @@ export default function WhyChooseUs() {
         transition={{ duration: 1 }}
       >
         <h2 className="text-3xl font-bold mb-6">
-          Ready to <span className="text-purple-500">Transform</span> Your
-          Digital Presence?
+          Ready to{" "}
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Transform
+          </span>{" "}
+          Your Digital Presence?
         </h2>
         <p className="text-lg text-gray-300 mb-8">
           Partner with us to create exceptional digital solutions tailored to
           your business needs.
         </p>
         <motion.button
-          className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-8 rounded-lg shadow-lg"
+          className="bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white py-3 px-8 rounded-lg shadow-lg"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
         >

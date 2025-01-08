@@ -11,12 +11,14 @@ import {
 import Layout from "./Layout.jsx";
 import Home from "./components/Home/Home.jsx";
 import GetStarted from "./components/GetStarted/GetStarted.jsx";
+import Thankyou from "./Pages/Thankyou/Thakyou";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
       <Route path="" element={<Home />} />
       <Route path="getstarted" element={<GetStarted />} />
+      <Route path="thankyou" element={<Thankyou />} />
     </Route>
   )
 );
