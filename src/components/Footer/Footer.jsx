@@ -22,14 +22,14 @@ function Footer() {
             className="col-span-1 md:col-span-2"
           >
             <div className="flex items-center space-x-4">
-              <h3 className="text-2xl font-bold text-orange-400">Weularity</h3>
+              <h3 className="text-2xl font-bold text-[#CC4EC5]">Weularity</h3>
             </div>
             <p className="text-gray-300 leading-relaxed mt-4">
               We build digital experiences that drive engagement and growth. Our
               expertise in design, development, and marketing will bring your
               vision to life.
             </p>
-            <button className="mt-6 px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-lg shadow-lg transition transform hover:scale-105">
+            <button className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg transition transform hover:scale-105">
               Let's Work Together
             </button>
           </motion.div>
@@ -61,7 +61,7 @@ function Footer() {
               transition={{ duration: 0.5 + index * 0.2 }}
               className="space-y-4"
             >
-              <h4 className="text-xl font-semibold text-orange-400">
+              <h4 className="text-xl font-semibold text-[#CC4EC5]">
                 {section.title}
               </h4>
               <ul className="space-y-3 text-gray-300">
@@ -69,7 +69,7 @@ function Footer() {
                   <li key={i}>
                     <a
                       href="#"
-                      className="hover:text-orange-400 transition duration-200"
+                      className="hover:text-[#CC4EC5] transition duration-200"
                     >
                       {item}
                     </a>
@@ -92,7 +92,7 @@ function Footer() {
             transition={{ duration: 0.5 }}
             className="text-center lg:text-left w-full lg:w-1/2"
           >
-            <h4 className="text-xl font-semibold text-orange-400">
+            <h4 className="text-xl font-semibold text-[#CC4EC5]">
               Stay Connected
             </h4>
             <p className="text-gray-400 mt-2">
@@ -107,7 +107,7 @@ function Footer() {
               />
               <button
                 type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-700 hover:via-orange-600 text-white font-bold rounded-lg transform hover:scale-105 transition duration-300"
+                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white font-bold rounded-lg transform hover:scale-105 transition duration-300"
               >
                 Subscribe
               </button>
@@ -130,7 +130,7 @@ function Footer() {
               <a
                 key={index}
                 href={social.link}
-                className="text-gray-400 hover:text-orange-400 transition duration-300"
+                className="text-gray-400 hover:text-[#CC4EC5] transition duration-300"
               >
                 <i className={social.icon}></i>
               </a>

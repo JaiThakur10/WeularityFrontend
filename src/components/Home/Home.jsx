@@ -117,7 +117,7 @@ export default function Home() {
       {/* whychooseus */}
       <WhyChooseUs />
 
-      <Hit />
+      {/* <Hit /> */}
 
       {/* Contact */}
       {/* <Contact /> */}

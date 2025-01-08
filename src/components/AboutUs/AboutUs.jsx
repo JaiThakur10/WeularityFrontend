@@ -15,7 +15,11 @@ function AboutUs() {
         className="text-center max-w-3xl"
       >
         <h2 className="text-4xl font-bold drop-shadow-lg">
-          Your Digital Growth Partner
+          Your{" "}
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
+            Digital
+          </span>{" "}
+          Growth Partner
         </h2>
         <p className="text-lg text-gray-300 mt-4 leading-relaxed">
           At Weularity, we’re a team of passionate designers, skilled
