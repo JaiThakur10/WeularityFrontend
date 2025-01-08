@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="font-sans scroll-smooth px-8 bg-black ">
       {/* hero */}
-      <div className="h-[630px] w-full flex flex-col md:flex-row items-center relative overflow-hidden bg-black">
+      <div className="h-[630px] justify-center w-full flex flex-col md:flex-row items-center relative overflow-hidden bg-black">
         {/* Background Decorative Elements */}
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-[120%] h-[120%] bg-gradient-radial from-indigo-500/20 via-purple-500/10 to-transparent blur-3xl"></div>
@@ -52,7 +52,7 @@ export default function Home() {
           transition={{ duration: 1 }}
         >
           <motion.h1
-            className="text-3xl md:text-5xl  md:text-center text-white font-extrabold drop-shadow-lg py-3"
+            className="text-3xl  md:text-5xl  md:text-center text-white font-extrabold drop-shadow-lg py-3"
             initial={{ scale: 0.8 }}
             animate={{ scale: 1 }}
             transition={{ duration: 0.8 }}
@@ -64,7 +64,7 @@ export default function Home() {
             & Digital Experiences
           </motion.h1>
           <motion.p
-            className="text-sm md:text-lg md:ml-6 md:px-8 text-white mt-6 leading-relaxed"
+            className="text-sm  md:text-lg md:ml-6 md:px-8 text-white mt-6 leading-relaxed"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
@@ -89,13 +89,13 @@ export default function Home() {
 
         {/* Right Section */}
         <motion.div
-          className="h-auto md:h-[400px] w-full md:w-1/2 flex items-center justify-center px-6 relative z-10"
+          className="hidden md:flex h-auto md:h-[400px] w-full md:w-1/2 items-center justify-center px-6 relative z-10"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
         >
           <img
-            src="./img/hero10.png"
+            src="./img/laptophero.png"
             alt="Hero Section Graphic"
             className="rounded-lg shadow-2xl mb-8 transform hover:scale-110 transition-transform duration-500 max-w-full h-auto"
           />
