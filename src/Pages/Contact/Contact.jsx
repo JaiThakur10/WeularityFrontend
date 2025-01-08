@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { Button } from "../ui/button";
+import { Button } from "../../components/ui/button";
 import { motion } from "framer-motion";
 import { CheckCircle, Star, Award, ShieldCheck, Smile } from "lucide-react";
 

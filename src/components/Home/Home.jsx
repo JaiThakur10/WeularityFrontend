@@ -6,7 +6,7 @@ import AboutUs from "../AboutUs/AboutUs";
 import Services from "../Services/Services";
 import Portfolio from "../Portfolio/Portfolio";
 import Testimonial from "../Testimonial/Testimonial";
-import Contact from "../Contact/Contact";
+import Contact from "../../Pages/Contact/Contact";
 import Footer from "../Footer/Footer";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import Hit from "../Hit.jsx/Hit";
