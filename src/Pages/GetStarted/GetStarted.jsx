@@ -344,7 +344,7 @@ const GetStarted = () => {
               </div>
 
               {/* Budget (Checkboxes) */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
+              <div className="sm:mt-[70px] mt-[10px] px-4 border-b-2 border-white">
                 <h1 className="text-white flex text-5xl mt-12">
                   What’s your monthly budget?
                 </h1>
@@ -361,12 +361,12 @@ const GetStarted = () => {
                   ].map((option) => (
                     <div className="flex items-center mt-10" key={option}>
                       <input
-                        type="radio"
+                        type="checkbox"
                         name="budget"
                         value={option}
-                        checked={formData.budget === option}
-                        onChange={handleChange}
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
+                        checked={formData.budget.includes(option)} // Check if option is in the array
+                        onChange={(e) => handleCheckboxChange(e, option)} // Handle changes for checkboxes
+                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA] bg-black border-[#60A5FA] border-2 focus:ring-yellow-500 focus:ring-1"
                       />
                       <label
                         htmlFor={option.toLowerCase().replace(/ /g, "-")}
