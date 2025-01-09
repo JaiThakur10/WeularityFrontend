@@ -42,10 +42,11 @@ const GetStarted = () => {
   };
 
   // Handle form submission
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Perform validation (example)
+    // Perform validation
     if (!formData.name || !formData.email) {
       alert("Please fill in all required fields.");
       return;
@@ -53,32 +54,17 @@ const GetStarted = () => {
 
     try {
       const res = await axios.post(
-        "https://weularity-backend.vercel.app/api/users",
+        "https://welurality.kesartechnologies.software/api/v1/user/form",
         formData
       );
-      // const response = await fetch(
-      //   "https://weularity-backend.vercel.app/api/users",
-      //   {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(formData),
-      //   }
-      //);
 
       if (res) {
         const data = res.data;
         alert("Form submitted successfully!");
         console.log("Response from server:", data);
-      } // } else {
-      //   // Handle server errors (e.g., 500, 400, etc.)
-      //   const errorData = await response.json(); // Attempt to parse the error response
-      //   alert(
-      //     `Failed to submit the form: ${errorData.message || "Unknown error"}`
-      //   );
-      //   console.error("Server Error:", errorData);
-      // }
+        navigate("/thankyou"); // Redirect to Thankyou page
+      }
     } catch (error) {
-      // Handle network errors (e.g., server is down, no connection)
       alert(
         "An error occurred while submitting the form. Please try again later."
       );
