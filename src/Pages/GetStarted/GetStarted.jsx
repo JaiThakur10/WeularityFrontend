@@ -358,7 +358,7 @@ const GetStarted = () => {
                       <input
                         type="checkbox"
                         name="services"
-                        value={service}
+                        value={option}
                         checked={formData.budget.includes(option)}
                         onChange={handleChange}
                         className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
