@@ -17,7 +17,7 @@ const WebFlow = () => {
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}>
-      <h1 className="text-5xl lg:text-4xl font-extrabold leading-tight mb-6">Webflow Development</h1>
+      <h1 className="text-5xl lg:text-4xl font-extrabold leading-tight mb-6"><span className="text-[#CC4EC5]">Web</span> Development </h1>
       </motion.div>
 
       <motion.div 

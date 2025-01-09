@@ -42,7 +42,7 @@ function Contact() {
             Contact <span className="text-purple-500">Us</span>?
           </h1>
            <p style={styles.contactText}>
-        Prefer to email? <a href="mailto:hello@alwaysfresh.io" style={styles.link}>hello@alwaysfresh.io</a>
+        Prefer to email? <a href="mailto:hello@alwaysfresh.io" style={styles.link}>weularity@gmail.com</a>
       </p>
       <p style={styles.contactText}>
         Prefer to call? <a href="tel:+17204326738" style={styles.link}>(720) 432-6738</a>

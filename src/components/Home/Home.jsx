@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
-import AboutUs from "../AboutUs/AboutUs";
 import Services from "../Services/Services";
 import Portfolio from "../Portfolio/Portfolio";
 import Testimonial from "../Testimonial/Testimonial";
@@ -10,6 +9,7 @@ import Contact from "../../Pages/Contact/Contact";
 import Footer from "../Footer/Footer";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import Hit from "../Hit.jsx/Hit";
+import HeroAbout from "../HeroAbout/HeroAbout";
 
 export default function Home() {
   return (
@@ -103,7 +103,7 @@ export default function Home() {
       </div>
 
       {/* aboutus */}
-      <AboutUs />
+      <HeroAbout />
 
       {/* Services */}
       <Services />

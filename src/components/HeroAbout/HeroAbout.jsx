@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-function AboutUs() {
+function HeroAbout() {
   return (
     <section
       id="about"
@@ -54,4 +54,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default HeroAbout;
