@@ -344,30 +344,26 @@ const GetStarted = () => {
               </div>
 
               {/* Budget (Checkboxes) */}
-              <div className="sm:mt-[70px] mt-[10px] px-4 border-b-2 border-white">
-                <h1 className="text-white flex text-5xl mt-12">
-                  What’s your monthly budget?
+              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2  border-white ">
+                <h1 className="text-white flex text-5xl">
+                  What services do you need?
                 </h1>
                 <p className="text-white mt-4">
-                  This is just so we can understand the scale of your project.
-                  Think about how much revenue you want your site to generate
-                  and find a budget that’s proportional to that goal.
+                  Not sure? Take a guess, we can help you define what you need
+                  later!
                 </p>
-                <div className="space-y-10 mt-12 mb-20">
-                  {[
-                    "Less than 20,000 (small project)",
-                    "Upto 50,000 (medium project)",
-                    "Over 50,000 (large project)",
-                  ].map((option) => (
-                    <div className="flex items-center mt-10" key={option}>
+                <div className="space-y-10 mt-12 mb-20 ">
+                  {["4k", "20k", "10k"].map((option) => (
+                    <div className="flex items-center" label key={option}>
                       <input
                         type="checkbox"
-                        name="budget"
-                        value={option}
-                        checked={formData.budget.includes(option)} // Check if option is in the array
-                        onChange={(e) => handleCheckboxChange(e, option)} // Handle changes for checkboxes
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA] bg-black border-[#60A5FA] border-2 focus:ring-yellow-500 focus:ring-1"
+                        name="services"
+                        value={service}
+                        checked={formData.budget.includes(option)}
+                        onChange={handleChange}
+                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
                       />
+
                       <label
                         htmlFor={option.toLowerCase().replace(/ /g, "-")}
                         className="ml-3"
