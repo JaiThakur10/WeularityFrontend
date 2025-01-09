@@ -13,7 +13,7 @@ const GetStarted = () => {
     services: [],
     websiteNeeds: "",
     newOrRebuild: "",
-    budget: "",
+    budget: [],
   });
 
   const [verified, setVerified] = useState(false);
@@ -380,7 +380,7 @@ const GetStarted = () => {
               </div>
 
               {/* pages */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
+              {/* <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
                 <h1 className="text-white flex text-5xl mt-12">
                   How many pages do you need?
                 </h1>
@@ -405,10 +405,10 @@ const GetStarted = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Additional Information */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
+              {/* <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
                 <h1 className=" text-white flex  text-5xl ">
                   Give us the details
                 </h1>
@@ -424,7 +424,7 @@ const GetStarted = () => {
                     className="w-full h-44 bg-black rounded-xl border-white border-2 text-white p-4 resize-none"
                   ></textarea>
                 </div>
-              </div>
+              </div> */}
               {/* ReCAPTCHA */}
               <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
                 <h1 className=" text-white flex  text-5xl ">Almost there!</h1>
