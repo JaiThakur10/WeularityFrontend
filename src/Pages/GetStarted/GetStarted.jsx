@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useNavigate } from "react-router-dom";
 
 const GetStarted = () => {
   // State to store form data
@@ -12,7 +13,7 @@ const GetStarted = () => {
     services: [],
     websiteNeeds: "",
     newOrRebuild: "",
-    budget: "",
+    budget: [],
   });
 
   const [verified, setVerified] = useState(false);
@@ -42,10 +43,11 @@ const GetStarted = () => {
   };
 
   // Handle form submission
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Perform validation (example)
+    // Perform validation
     if (!formData.name || !formData.email) {
       alert("Please fill in all required fields.");
       return;
@@ -53,32 +55,17 @@ const GetStarted = () => {
 
     try {
       const res = await axios.post(
-        "https://weularity-backend.vercel.app/api/users",
+        "https://welurality.kesartechnologies.software/api/v1/user/form",
         formData
       );
-      // const response = await fetch(
-      //   "https://weularity-backend.vercel.app/api/users",
-      //   {
-      //     method: "POST",
-      //     headers: { "Content-Type": "application/json" },
-      //     body: JSON.stringify(formData),
-      //   }
-      //);
 
       if (res) {
         const data = res.data;
         alert("Form submitted successfully!");
         console.log("Response from server:", data);
-      } // } else {
-      //   // Handle server errors (e.g., 500, 400, etc.)
-      //   const errorData = await response.json(); // Attempt to parse the error response
-      //   alert(
-      //     `Failed to submit the form: ${errorData.message || "Unknown error"}`
-      //   );
-      //   console.error("Server Error:", errorData);
-      // }
+        navigate("/thankyou"); // Redirect to Thankyou page
+      }
     } catch (error) {
-      // Handle network errors (e.g., server is down, no connection)
       alert(
         "An error occurred while submitting the form. Please try again later."
       );
@@ -357,30 +344,26 @@ const GetStarted = () => {
               </div>
 
               {/* Budget (Checkboxes) */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
-                <h1 className="text-white flex text-5xl mt-12">
-                  What’s your monthly budget?
+              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2  border-white ">
+                <h1 className="text-white flex text-5xl">
+                  What services do you need?
                 </h1>
                 <p className="text-white mt-4">
-                  This is just so we can understand the scale of your project.
-                  Think about how much revenue you want your site to generate
-                  and find a budget that’s proportional to that goal.
+                  Not sure? Take a guess, we can help you define what you need
+                  later!
                 </p>
-                <div className="space-y-10 mt-12 mb-20">
-                  {[
-                    "Less than 20,000 (small project)",
-                    "Upto 50,000 (medium project)",
-                    "Over 50,000 (large project)",
-                  ].map((option) => (
-                    <div className="flex items-center mt-10" key={option}>
+                <div className="space-y-10 mt-12 mb-20 ">
+                  {["4k", "20k", "10k"].map((option) => (
+                    <div className="flex items-center" label key={option}>
                       <input
-                        type="radio"
-                        name="budget"
+                        type="checkbox"
+                        name="services"
                         value={option}
-                        checked={formData.budget === option}
+                        checked={formData.budget.includes(option)}
                         onChange={handleChange}
                         className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
                       />
+
                       <label
                         htmlFor={option.toLowerCase().replace(/ /g, "-")}
                         className="ml-3"
@@ -393,7 +376,7 @@ const GetStarted = () => {
               </div>
 
               {/* pages */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
+              {/* <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
                 <h1 className="text-white flex text-5xl mt-12">
                   How many pages do you need?
                 </h1>
@@ -418,10 +401,10 @@ const GetStarted = () => {
                     </div>
                   ))}
                 </div>
-              </div>
+              </div> */}
 
               {/* Additional Information */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
+              {/* <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
                 <h1 className=" text-white flex  text-5xl ">
                   Give us the details
                 </h1>
@@ -437,7 +420,7 @@ const GetStarted = () => {
                     className="w-full h-44 bg-black rounded-xl border-white border-2 text-white p-4 resize-none"
                   ></textarea>
                 </div>
-              </div>
+              </div> */}
               {/* ReCAPTCHA */}
               <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
                 <h1 className=" text-white flex  text-5xl ">Almost there!</h1>

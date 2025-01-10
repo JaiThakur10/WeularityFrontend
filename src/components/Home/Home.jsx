@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Button } from "../ui/button";
+
 import Services from "../Services/Services";
 import Portfolio from "../Portfolio/Portfolio";
 import Testimonial from "../Testimonial/Testimonial";
-import Contact from "../../Pages/Contact/Contact";
-import Footer from "../Footer/Footer";
+
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import Hit from "../Hit.jsx/Hit";
 import HeroAbout from "../HeroAbout/HeroAbout";
@@ -46,7 +46,7 @@ export default function Home() {
 
         {/* Left Section */}
         <motion.div
-          className="flex flex-col h-auto md:h-[400px] w-full md:w-1/2 px-6 md:px-12 relative z-10 text-center md:text-left"
+          className="flex mt-[100px] md:mt-[150px] flex-col h-auto md:h-[400px] w-full md:w-1/2 px-6 md:px-12 relative z-10 text-center md:text-left"
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}
@@ -89,7 +89,7 @@ export default function Home() {
 
         {/* Right Section */}
         <motion.div
-          className="hidden md:flex h-auto md:h-[400px] w-full md:w-1/2 items-center justify-center px-6 relative z-10"
+          className="hidden md:flex mt-[150px] h-auto md:h-[400px] w-full md:w-1/2 items-center justify-center px-6 relative z-10"
           initial={{ x: 100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1 }}

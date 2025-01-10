@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   NavigationMenu,
@@ -7,12 +7,31 @@ import {
   NavigationMenuTrigger,
   NavigationMenuContent,
 } from "@/components/ui/navigation-menu";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Handle Navbar Scroll
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      setIsScrolled(true);
+    } else {
+      setIsScrolled(false);
+    }
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="shadow-lg z-50 top-0">
-      <nav className="bg-black border-gray-200 px-4 lg:px-6 py-2.5 relative">
+    <header
+      className={`fixed top-0 w-full z-50 transition-all ${
+        isScrolled ? "bg-black shadow-lg" : "bg-transparent"
+      }`}
+    >
+      <nav className="border-gray-200 px-4 lg:px-6 py-2.5 relative">
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           {/* Logo */}
           <Link
@@ -38,114 +57,97 @@ export default function Header() {
               <NavigationMenuList className="flex space-x-8">
                 {/* Services */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white bg-black hover:text-orange-500 transition-all">
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                     Services
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid grid-cols-2 gap-4 bg-black shadow-lg rounded-lg p-6 w-[500px]">
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>Web Design</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Build stunning websites that captivate users.
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="hover:bg-pink-400 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>SEO Optimization</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Rank higher and attract more traffic.
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>UI/UX Design</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Enhance user experience with beautiful designs.
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>Digital Marketing</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Drive growth with strategic campaigns.
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
+                  <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[200px] w-auto">
+                    <ul className="flex space-x-8">
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/web-design"
+                          className="text-lg  font-semibold relative group"
+                        >
+                          Web Design
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/seo"
+                          className="text-lg  font-semibold relative group"
+                        >
+                          SEO Optimization
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/ui-ux"
+                          className="text-lg  font-semibold relative group"
+                        >
+                          UI/UX Design
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                    </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* Work */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white bg-black hover:text-orange-500 transition-all">
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                     Work
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid grid-cols-2 gap-4 bg-black shadow-lg rounded-lg p-6 w-[500px]">
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>Portfolio Showcase</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Explore our top-tier work samples.
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>Case Studies</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Learn how we solved real-world problems.
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
+                  <NavigationMenuContent className="absolute z-50 mt-2  rounded-lg shadow-lg p-4 w-auto">
+                    <ul className="flex space-x-8">
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/portfolio"
+                          className="text-lg font-semibold relative group"
+                        >
+                          Portfolio Showcase
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/case-studies"
+                          className="text-lg font-semibold relative group"
+                        >
+                          Case Studies
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                    </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 {/* Agency */}
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-white bg-black hover:text-orange-500 transition-all">
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                     Agency
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <div className="grid grid-cols-2 gap-4 bg-black shadow-lg rounded-lg p-6 w-[500px]">
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>About Us</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Learn more about our vision and team.
-                          </p>
-                        </CardContent>
-                      </Card>
-                      <Card className="hover:bg-gray-50 transition duration-300 cursor-pointer">
-                        <CardHeader>
-                          <CardTitle>Careers</CardTitle>
-                        </CardHeader>
-                        <CardContent>
-                          <p className="text-sm text-gray-500">
-                            Join our talented team of professionals.
-                          </p>
-                        </CardContent>
-                      </Card>
-                    </div>
+                  <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto">
+                    <ul className="flex space-x-8">
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/about"
+                          className="text-lg font-semibold relative group"
+                        >
+                          About Us
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                      <li className="hover:text-orange-500 transition-all">
+                        <Link
+                          to="/team"
+                          className="text-lg font-semibold relative group"
+                        >
+                          Our Team
+                          <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+                        </Link>
+                      </li>
+                    </ul>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
