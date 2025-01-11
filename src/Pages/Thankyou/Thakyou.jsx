@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaCheckCircle, FaPhoneAlt, FaFileAlt, FaRocket } from "react-icons/fa";
+import useScrollTop from "@/Hooks/UseScrollTop/UseScrollTop";
 
 const Thankyou = () => {
+  useScrollTop();
   const steps = [
     {
       number: 1,

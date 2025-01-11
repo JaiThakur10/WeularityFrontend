@@ -1,94 +1,94 @@
-import axios from "axios";
 import React, { useState } from "react";
-import ReCAPTCHA from "react-google-recaptcha";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const GetStarted = () => {
-  // State to store form data
+const UserForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     company: "",
-    //phoneNumber: "",
     services: [],
-    websiteNeeds: "",
     newOrRebuild: "",
+    websiteNeeds: "",
     budget: [],
   });
 
-  const [verified, setVerified] = useState(false);
+  const axiosInstance = axios.create({
+    timeout: 10000, // Set a 10-second timeout
+  });
 
-  // Handle input changes
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [responseMessage, setResponseMessage] = useState(null);
+  const [error, setError] = useState(null);
+
+  const servicesOptions = [
+    "Web Design / UI/UX Design",
+    "Webflow Development",
+    "Brand/website strategy",
+    "Marketing Services",
+    "Bit of everything",
+  ];
+
+  const newOrRebuildOptions = [
+    "Brand new website",
+    "Rebuild of existing website",
+    "Updates to existing website",
+  ];
+
+  const websiteNeedsOptions = [
+    "Blog",
+    "Ecommerce",
+    "Memberships",
+    "Portfolio",
+    "Not sure yet",
+  ];
+
+  const budgetOptions = [
+    "Less than 20,000 (small project)",
+    "Upto 50,000 (medium project)",
+    "Over 50,000 (large project)",
+  ];
+
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    if (type === "checkbox") {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: checked
-          ? [...prevData[name], value] // Add value to array
-          : prevData[name].filter((item) => item !== value), // Remove value from array
-      }));
-    } else if (type === "radio") {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value, // Update the selected radio value
-      }));
-    } else {
-      setFormData((prevData) => ({
-        ...prevData,
-        [name]: value, // Update other input fields
-      }));
-    }
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
   };
 
-  // Handle form submission
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Perform validation
-    if (!formData.name || !formData.email) {
-      alert("Please fill in all required fields.");
-      return;
-    }
+    setIsSubmitting(true);
+    setResponseMessage(null);
+    setError(null);
 
     try {
-      const res = await axios.post(
+      const response = await axiosInstance.post(
         "https://welurality.kesartechnologies.software/api/v1/user/form",
-        formData
+        formData,
+        { headers: { "Content-Type": "application/json" } }
       );
-
-      if (res) {
-        const data = res.data;
-        alert("Form submitted successfully!");
-        console.log("Response from server:", data);
-        navigate("/thankyou"); // Redirect to Thankyou page
-      }
-    } catch (error) {
-      alert(
-        "An error occurred while submitting the form. Please try again later."
+      setResponseMessage(
+        response.data.message || "Form submitted successfully!"
       );
-      console.error("Network Error:", error.message);
+      setFormData({
+        name: "",
+        email: "",
+        company: "",
+        services: [],
+        newOrRebuild: "",
+        websiteNeeds: "",
+        budget: [],
+      });
+      navigate("/thankyou");
+    } catch (err) {
+      setError(err.response?.data?.message || "Failed to submit the form.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
-
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    setFormData((prev) => {
-      const services = checked
-        ? [...prev.services, name] // Add to array if checked
-        : prev.services.filter((service) => service !== name); // Remove if unchecked
-      return { ...prev, services };
-    });
-  };
-
-  // Handle ReCAPTCHA
-  const onChange = (value) => {
-    console.log("ReCAPTCHA value:", value);
-    setVerified(true); // Mark ReCAPTCHA as verified
-  };
-
   const sections = [
     {
       title: "What's this for?",
@@ -144,13 +144,13 @@ const GetStarted = () => {
     <div className="min-h-screen bg-black text-white flex flex-col sm:flex-row">
       <div className="hidden sm:block sm:w-[40%] h-full">
         <div className="h-[300px] mt-[100px] py-4 px-16">
-          <h1 className="text-[80px] sm:text-xl md:text-3xl xl:text-7xl font-bold text-[#60A5FA] mt-2">
-            Get started!
-          </h1>
+          <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-[40px] font-bold md:text-7xl bg-clip-text text-transparent">
+            Get Started!
+          </span>
           <p className="mt-4 text-lg">
-            This is your first step to becoming fresh! Fill out the following
-            questions as best as you can, we’ll take a closer look then be in
-            touch to get things started.
+            This is your first step to your digital presence! Fill out the
+            following questions as best as you can, we’ll take a closer look
+            then be in touch to get things started.
           </p>
         </div>
 
@@ -167,9 +167,22 @@ const GetStarted = () => {
 
       {/* right div */}
       <div className="w-full sm:w-[60%] h-[full] flex">
-        <div className="w-[6%] sm:mt-[445px] mt-[380px]">
+        <div className="w-[6%] sm:mt-[445px]  mt-[380px] ">
           <h1 className="text-[#60A5FA] flex justify-center text-xs">1/8</h1>
+          <h1 className="text-[#60A5FA] flex justify-center mt-[430px] text-xs">
+            2/8
+          </h1>
+          <h1 className="text-[#60A5FA] flex justify-center mt-[520px] text-xs">
+            3/8
+          </h1>
+          <h1 className="text-[#60A5FA] flex justify-center mt-[430px] text-xs">
+            4/8
+          </h1>
+          <h1 className="text-[#60A5FA] flex justify-center mt-[530px] text-xs">
+            5/8
+          </h1>
         </div>
+
         <div className="w-[80%]">
           {/* hidden in large screen only visible in mobile */}
           <div className="h-[300px] mt-[20px] py-4 px-2 border-b-[1px] border-white sm:hidden">
@@ -188,8 +201,9 @@ const GetStarted = () => {
             <p className="text-white mt-4">
               Alright let’s start with the basics!
             </p>
+
             <form className="space-y-10 mt-12 mb-20" onSubmit={handleSubmit}>
-              {/* Name */}
+              {/* name */}
               <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2  border-white mb-8">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-20 ">
                   <input
@@ -199,9 +213,9 @@ const GetStarted = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="h-14 w-full bg-black rounded-xl border-white border-2 text-white p-4 mb-4"
+                    required
                   />
-
-                  {/* Email */}
+                  {/* email */}
                   <input
                     type="email"
                     name="email"
@@ -209,32 +223,24 @@ const GetStarted = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="h-14 w-full bg-black rounded-xl border-white border-2 text-white p-4 mb-4"
+                    required
                   />
 
-                  {/* Company */}
+                  {/* company */}
                   <input
                     type="text"
                     name="company"
                     placeholder="What company are you from?"
                     value={formData.company}
-                    onChange={handleChange}
                     className="h-14 w-full bg-black rounded-xl border-white border-2 text-white p-4 mb-4"
+                    onChange={handleChange}
                   />
-
-                  {/* phoneNumber */}
-                  {/* <input
-                    type="tel"
-                    name="phoneNumber"
-                    placeholder="Your phone number?"
-                    value={formData.phoneNumber}
-                    onChange={handleChange}
-                    className="h-14 w-full bg-black rounded-xl border-white border-2 text-white p-4 mb-4"
-                  /> */}
                 </div>
               </div>
 
-              {/* Services (Checkboxes) */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2  border-white ">
+              {/* services */}
+
+              <div className="sm:mt-[70px] mt-[10px] px-4 border-b-2 border-white">
                 <h1 className="text-white flex text-5xl">
                   What services do you need?
                 </h1>
@@ -242,27 +248,34 @@ const GetStarted = () => {
                   Not sure? Take a guess, we can help you define what you need
                   later!
                 </p>
-                <div className="space-y-10 mt-12 mb-20 ">
-                  {[
-                    "Web Design / UI/UX Design",
-                    "Webflow Development",
-                    "Brand/website strategy",
-                    "Marketing Services",
-                    "Bit of everything",
-                  ].map((service) => (
-                    <div className="flex items-center" label key={service}>
+                <div className="space-y-10 mt-12 mb-20">
+                  {servicesOptions.map((service) => (
+                    <div className="flex items-center" key={service}>
                       <input
                         type="checkbox"
                         name="services"
                         value={service}
                         checked={formData.services.includes(service)}
-                        onChange={handleChange}
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
+                        onChange={(e) => {
+                          const selectedService = e.target.value;
+                          setFormData((prev) => {
+                            const isSelected =
+                              prev.services.includes(selectedService);
+                            return {
+                              ...prev,
+                              services: isSelected
+                                ? prev.services.filter(
+                                    (s) => s !== selectedService
+                                  )
+                                : [...prev.services, selectedService],
+                            };
+                          });
+                        }}
+                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA] bg-black border-[#60A5FA] border-2 focus:ring-yellow-500 focus:ring-1"
                       />
-
                       <label
                         htmlFor={service.toLowerCase().replace(/ /g, "-")}
-                        className="ml-3"
+                        className="ml-3 text-white"
                       >
                         {service}
                       </label>
@@ -271,33 +284,30 @@ const GetStarted = () => {
                 </div>
               </div>
 
-              {/* New or Rebuild (Radio Buttons) */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
-                <h1 className=" text-white flex  text-5xl ">
+              {/* new or rebuild */}
+
+              <div className="sm:mt-[70px] mt-[10px] px-4 border-b-2 border-white">
+                <h1 className="text-white flex text-5xl">
                   Is this a new website or a rebuild?
                 </h1>
-                <p className=" text-white mt-4">
+                <p className="text-white mt-4">
                   Looking for something brand new? Or to upgrade your existing
                   site?
                 </p>
                 <div className="space-y-10 mt-12 mb-20">
-                  {[
-                    "Brand new website",
-                    "Rebuild of existing website",
-                    "Updates to existing website",
-                  ].map((option) => (
-                    <div className="flex items-center mt-10" label key={option}>
+                  {newOrRebuildOptions.map((option) => (
+                    <div className="flex items-center mt-10" key={option}>
                       <input
                         type="radio"
                         name="newOrRebuild"
                         value={option}
                         checked={formData.newOrRebuild === option}
                         onChange={handleChange}
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
+                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA] bg-black border-[#60A5FA] border-2 focus:ring-yellow-500 focus:ring-1"
                       />
                       <label
                         htmlFor={option.toLowerCase().replace(/ /g, "-")}
-                        className="ml-3"
+                        className="ml-3 text-white"
                       >
                         {option}
                       </label>
@@ -306,35 +316,30 @@ const GetStarted = () => {
                 </div>
               </div>
 
-              {/* types */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
-                <h1 className=" text-white flex  text-5xl ">
-                  Is this a new website or a rebuild?
+              {/* type */}
+
+              <div className="sm:mt-[70px] mt-[10px] px-4 border-b-2 border-white">
+                <h1 className="text-white flex text-5xl">
+                  What does your website need?
                 </h1>
-                <p className=" text-white mt-4">
-                  Looking for something brand new? Or to upgrade your existing
-                  site?
+                <p className="text-white mt-4">
+                  Looking for a blog, ecommerce site, or something else? Let us
+                  know!
                 </p>
                 <div className="space-y-10 mt-12 mb-20">
-                  {[
-                    "Blog",
-                    "Ecommerce",
-                    "Memberships",
-                    "Portfolio",
-                    "Not sure yet",
-                  ].map((type) => (
-                    <div className="flex items-center mt-10" label key={type}>
+                  {websiteNeedsOptions.map((type) => (
+                    <div className="flex items-center mt-10" key={type}>
                       <input
                         type="radio"
                         name="websiteNeeds"
                         value={type}
                         checked={formData.websiteNeeds === type}
                         onChange={handleChange}
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
+                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA] bg-black border-[#60A5FA] border-2 focus:ring-yellow-500 focus:ring-1"
                       />
                       <label
                         htmlFor={type.toLowerCase().replace(/ /g, "-")}
-                        className="ml-3"
+                        className="ml-3 text-white"
                       >
                         {type}
                       </label>
@@ -343,109 +348,59 @@ const GetStarted = () => {
                 </div>
               </div>
 
-              {/* Budget (Checkboxes) */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2  border-white ">
-                <h1 className="text-white flex text-5xl">
-                  What services do you need?
+              {/* budget */}
+
+              <div className="sm:mt-[70px] mt-[10px] px-4 border-b-2 border-white">
+                <h1 className="text-white flex text-5xl mt-12">
+                  What’s your monthly budget?
                 </h1>
                 <p className="text-white mt-4">
-                  Not sure? Take a guess, we can help you define what you need
-                  later!
+                  This is just so we can understand the scale of your project.
+                  Think about how much revenue you want your site to generate
+                  and find a budget that’s proportional to that goal.
                 </p>
-                <div className="space-y-10 mt-12 mb-20 ">
-                  {["4k", "20k", "10k"].map((option) => (
-                    <div className="flex items-center" label key={option}>
-                      <input
-                        type="checkbox"
-                        name="services"
-                        value={option}
-                        checked={formData.budget.includes(option)}
-                        onChange={handleChange}
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
-                      />
-
-                      <label
-                        htmlFor={option.toLowerCase().replace(/ /g, "-")}
-                        className="ml-3"
-                      >
-                        {option}
-                      </label>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* pages */}
-              {/* <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
-                <h1 className="text-white flex text-5xl mt-12">
-                  How many pages do you need?
-                </h1>
-
                 <div className="space-y-10 mt-12 mb-20">
-                  {["Less than 5", "5-10", "10-15", "15+"].map((option) => (
-                    <div className="flex items-center mt-10" label key={option}>
+                  {budgetOptions.map((option) => (
+                    <div className="flex items-center mt-10" key={option}>
                       <input
                         type="radio"
-                        name="pages"
+                        name="budget"
                         value={option}
-                        checked={formData.pages === option}
-                        onChange={handleChange}
-                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA]  bg-black border-[#60A5FA] border-2  focus:ring-yellow-500 focus:ring-1"
+                        checked={formData.budget.includes(option)}
+                        onChange={(e) => {
+                          const selectedOption = e.target.value;
+                          setFormData((prev) => ({
+                            ...prev,
+                            budget: prev.budget.includes(selectedOption)
+                              ? prev.budget.filter(
+                                  (item) => item !== selectedOption
+                                ) // Remove if already selected
+                              : [selectedOption], // Replace with new single selection
+                          }));
+                        }}
+                        className="h-5 w-5 text-yellow-500 checked:text-black checked:bg-[#60A5FA] bg-black border-[#60A5FA] border-2 focus:ring-yellow-500 focus:ring-1"
                       />
                       <label
                         htmlFor={option.toLowerCase().replace(/ /g, "-")}
-                        className="ml-3"
+                        className="ml-3 text-white"
                       >
                         {option}
                       </label>
                     </div>
                   ))}
                 </div>
-              </div> */}
-
-              {/* Additional Information */}
-              {/* <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
-                <h1 className=" text-white flex  text-5xl ">
-                  Give us the details
-                </h1>
-                <p className=" text-white mt-4">
-                  Tell us as much as you want about your project below.
-                </p>
-                <div className="col-span-2">
-                  <textarea
-                    name="details"
-                    placeholder="Additional information"
-                    value={formData.details}
-                    onChange={handleChange}
-                    className="w-full h-44 bg-black rounded-xl border-white border-2 text-white p-4 resize-none"
-                  ></textarea>
-                </div>
-              </div> */}
-              {/* ReCAPTCHA */}
-              <div className="   sm:mt-[70px] mt-[10px]  px-4 border-b-2 border-white">
-                <h1 className=" text-white flex  text-5xl ">Almost there!</h1>
-                <p className=" text-white mt-4">
-                  Hit the button we will do the rest!
-                </p>
-
-                <div className="mt-4 mb-20">
-                  {/* <ReCAPTCHA
-                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                    onChange={onChange}
-                  /> */}
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className={`bg-[#60A5FA] text-black mt-20 w-full h-16 rounded-full text-3xl hover:bg-black hover:border-[#60A5FA] hover:text-white font-bold hover:border-2 ${
-                      !verified && "opacity-50 cursor-not-allowed"
-                    }`}
-                    disabled={verified}
-                  >
-                    Submit
-                  </button>
-                </div>
               </div>
+
+              <button
+                type="submit"
+                className="bg-[#60A5FA] text-black mt-20 w-full h-16 rounded-full text-3xl hover:bg-black hover:border-[#60A5FA] hover:text-white font-bold hover:border-2 disabled={isSubmitting}"
+              >
+                {isSubmitting ? "Submitting..." : "Submit"}
+              </button>
+              {responseMessage && (
+                <p style={{ color: "green" }}>{responseMessage}</p>
+              )}
+              {error && <p style={{ color: "red" }}>{error}</p>}
             </form>
           </div>
         </div>
@@ -454,4 +409,4 @@ const GetStarted = () => {
   );
 };
 
-export default GetStarted;
+export default UserForm;
