@@ -186,13 +186,13 @@ const UserForm = () => {
         <div className="w-[80%]">
           {/* hidden in large screen only visible in mobile */}
           <div className="h-[300px] mt-[20px] py-4 px-2 border-b-[1px] border-white sm:hidden">
-            <h1 className="text-[50px] font-bold text-[#87befb] mt-2">
-              Get started!
-            </h1>
+            <span className="bg-gradient-to-r from-purple-500 to-pink-500 text-[40px] font-bold md:text-7xl bg-clip-text text-transparent">
+              Get Started!
+            </span>
             <p className="mt-4 text-lg">
-              This is your first step to becoming fresh! Fill out the following
-              questions as best as you can, we’ll take a closer look then be in
-              touch to get things started.
+              This is your first step to your digital presence! Fill out the
+              following questions as best as you can, we’ll take a closer look
+              then be in touch to get things started.
             </p>
           </div>
           {/* Form structure */}
