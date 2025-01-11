@@ -26,22 +26,22 @@ const WebFlow = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}>
             <p className="text-lg text-center text-white leading-relaxed mb-6">
-              At our award-winning Webflow agency, we pride ourselves on pushing the
+              At our edge tech web service company, we pride ourselves on pushing the
               boundaries of web development to create highly functional websites. Our
               team of talented developers brings innovative ideas to life, leveraging
-              the power of Webflow's intuitive platform. With Always Fresh, you get
-              Webflow Development at its finest.
+              the power of Weularity intuitive platform. With Weularity, you get
+              Website Development at its finest.
             </p>
             {/* Awards Section */}
             <div className="text-center text-sm text-gray-500 mb-10">
               <span>Reviewed on </span>
-              <strong className="text-gray-800">Clutch</strong> ⭐⭐⭐⭐⭐ (10 Reviews)
+              <strong className="text-gray-800">Google</strong> ⭐⭐⭐⭐⭐ (10 Reviews)
               &nbsp;|&nbsp;
-              <strong className="text-gray-800">Professional Partner</strong>
+              <strong className="text-gray-800">Professional Clients</strong>
               &nbsp;|&nbsp;
-              <strong className="text-gray-800">Awwwards</strong>
+              <strong className="text-gray-800">Partners</strong>
               &nbsp;|&nbsp;
-              <strong className="text-gray-800">CSSDesignAwards</strong>
+              <strong className="text-gray-800">Innovative Design</strong>
             </div>
           </motion.div>
         </div>

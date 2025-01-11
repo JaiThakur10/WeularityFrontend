@@ -14,9 +14,9 @@ const projects = [
 "./img/ypgold.png",
   },
   {
-    title: "Portfolio Website",
+    title: "Dental-Clinic",
     description:
-      "A sleek and modern portfolio site showcasing creative work and accomplishments.",
+      "A sleek and modern technical site showcasing creative work and accomplishments in creating a Dental Clinic site",
     technologies: ["Next.js", "Framer Motion", "ShadCN"],
     link: "#",
     image:
@@ -32,16 +32,16 @@ const projects = [
       "https://blog.tubikstudio.com/wp-content/uploads/2017/01/book_and_travel_website_tubik.png",
   },
   {
-    title: "Social Media App",
+    title: "Lion Fitness Gym",
     description:
-      "A cross-platform social media application with real-time chat and dynamic feed features.",
+      "A cross-platform gym web application with modern feed features.",
     technologies: ["React Native", "Redux", "Expo"],
     link: "#",
     image:
       "https://blog.tubikstudio.com/wp-content/uploads/2019/06/health_blog_webdesign_tubik-1024x768.png",
   },
   {
-    title: "helloji",
+    title: "Portfolio",
     description:
       "A fully functional online store with advanced features like product filtering, cart, and payment integration.",
     technologies: ["React", "Node.js", "Tailwind CSS"],

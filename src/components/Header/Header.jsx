@@ -93,9 +93,9 @@ export default function Header() {
                     <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                       Services
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[100px]">
-                      <ul className="flex space-x-44 ">
-                        <li className="hover:text-orange-500 transition-all">
+                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[200px]">
+                      <ul className="flex space-x-44 border-b-2 border-black pb-4 ">
+                        <li className="hover:text-orange-500 transition-all ">
                           <Link
                             to="/webflow"
                             className="text-lg font-semibold relative group"
@@ -131,8 +131,8 @@ export default function Header() {
                     <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                       Work
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto h-[100px]">
-                      <ul className="flex space-x-44">
+                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4  h-[200px]">
+                      <ul className="flex space-x-56 border-b-2 border-black pb-4">
                         <li className="hover:text-orange-500 transition-all">
                           <Link
                             to="/previouswork"
@@ -160,8 +160,8 @@ export default function Header() {
                     <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                       Agency
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto h-[100px]">
-                      <ul className="flex space-x-44">
+                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[200px]">
+                      <ul className="flex space-x-56 border-b-2 border-black pb-4">
                         <li className="hover:text-orange-500 transition-all">
                           <Link
                             to="/about"
