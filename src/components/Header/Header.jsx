@@ -93,11 +93,11 @@ export default function Header() {
                     <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                       Services
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[200px] w-auto">
-                      <ul className="flex space-x-8">
+                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[100px]">
+                      <ul className="flex space-x-44 ">
                         <li className="hover:text-orange-500 transition-all">
                           <Link
-                            to="/web-design"
+                            to="/webflow"
                             className="text-lg font-semibold relative group"
                           >
                             Web Design
@@ -106,7 +106,7 @@ export default function Header() {
                         </li>
                         <li className="hover:text-orange-500 transition-all">
                           <Link
-                            to="/seo"
+                            to="/webflow"
                             className="text-lg font-semibold relative group"
                           >
                             SEO Optimization
@@ -115,7 +115,7 @@ export default function Header() {
                         </li>
                         <li className="hover:text-orange-500 transition-all">
                           <Link
-                            to="/ui-ux"
+                            to="/webflow"
                             className="text-lg font-semibold relative group"
                           >
                             UI/UX Design
@@ -131,11 +131,11 @@ export default function Header() {
                     <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                       Work
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto">
-                      <ul className="flex space-x-8">
+                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto h-[100px]">
+                      <ul className="flex space-x-44">
                         <li className="hover:text-orange-500 transition-all">
                           <Link
-                            to="/portfolio"
+                            to="/previouswork"
                             className="text-lg font-semibold relative group"
                           >
                             Portfolio Showcase
@@ -144,7 +144,7 @@ export default function Header() {
                         </li>
                         <li className="hover:text-orange-500 transition-all">
                           <Link
-                            to="/case-studies"
+                            to="/previouswork"
                             className="text-lg font-semibold relative group"
                           >
                             Case Studies
@@ -160,8 +160,8 @@ export default function Header() {
                     <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
                       Agency
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto">
-                      <ul className="flex space-x-8">
+                    <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 w-auto h-[100px]">
+                      <ul className="flex space-x-44">
                         <li className="hover:text-orange-500 transition-all">
                           <Link
                             to="/about"
@@ -173,7 +173,7 @@ export default function Header() {
                         </li>
                         <li className="hover:text-orange-500 transition-all">
                           <Link
-                            to="/team"
+                            to="/contact"
                             className="text-lg font-semibold relative group"
                           >
                             Our Team
