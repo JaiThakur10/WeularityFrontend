@@ -6,32 +6,32 @@ import { Star } from "lucide-react";
 function Testimonial() {
   const testimonials = [
     {
-      name: "Alex Johnson",
-      role: "CEO, TechCorp",
+      name: "Nirupam Garg",
+      role: "Founder YP Gold Spices",
       avatar: "https://via.placeholder.com/150",
       review:
         "Working with this team has been an absolute pleasure. Their dedication to excellence is unmatched!",
       rating: 5,
     },
     {
-      name: "Sophia Lee",
-      role: "Founder, Design Studio",
+      name: "Gayatri Deshpande",
+      role: "Operations Specialist - Citi India",
       avatar: "https://via.placeholder.com/150",
       review:
-        "The creativity and professionalism they brought to our project were phenomenal. Highly recommend!",
+        "The creativity and professionalism they brought to my project was phenomenal. Highly recommend!",
       rating: 4.5,
     },
     {
-      name: "Michael Brown",
-      role: "CTO, StartupX",
+      name: "Sheetal Gandotra",
+      role: "Professor",
       avatar: "https://via.placeholder.com/150",
       review:
         "Their ability to transform ideas into reality is remarkable. Their team exceeded our expectations!",
       rating: 5,
     },
     {
-      name: "Emily White",
-      role: "Product Manager, Innovate Inc.",
+      name: "Saksham",
+      role: "Student",
       avatar: "https://via.placeholder.com/150",
       review:
         "Exceptional service and results. They understood our goals and delivered beyond what we imagined!",

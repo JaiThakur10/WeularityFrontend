@@ -29,8 +29,21 @@ function HeroAbout() {
         </p>
       </motion.div>
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-6xl px-4">
-        {["Proven Track Record", "Tailor-Made Solutions", "Dedicated Team"].map(
-          (title, i) => (
+        {[
+           {
+            title: "Proven Track Record",
+            content: "We have a history of delivering exceptional results for our clients. The feedback given by them says it all."
+          },
+          {
+            title: "Tailor-Made Solutions",
+            content: "Our solutions are customized to meet your unique needs and goals. Whatever your expectations are we meet with efficiency."
+          },
+          {
+            title: "Dedicated Team",
+            content: "Our team is committed to providing you with the best service possible. Client satisfaction is our motto."
+          }
+        ].map(
+          (item, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 50 }}
@@ -40,11 +53,10 @@ function HeroAbout() {
               className="bg-gradient-to-br from-indigo-500/20 to-purple-500/10 rounded-lg p-6 shadow-2xl transform hover:scale-105 transition-transform duration-500"
             >
               <h3 className="font-semibold text-xl text-white drop-shadow-md">
-                {title}
+                {item.title}
               </h3>
               <p className="text-gray-300 mt-2 leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reprehenderit, ad.
+                {item.content}
               </p>
             </motion.div>
           )
