@@ -16,7 +16,7 @@ import WebFlow from "./Pages/WebFlow/WebFlow";
 import Contact from "./Pages/Contact/Contact";
 import PreviousWork from "./Pages/PreviousWork/PreviousWork";
 import AboutUs from "./Pages/AboutUs/AboutUs";
-
+import Services from "./components/Services";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,6 +28,7 @@ const router = createBrowserRouter(
       <Route path="contact" element={<Contact />} />
       <Route path="previouswork" element={<PreviousWork />} />
       <Route path="about" element={<AboutUs />} />
+      <Route path="services" element={<Services />} />
     </Route>
   )
 );
