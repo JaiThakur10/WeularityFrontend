@@ -51,6 +51,41 @@ const projects = [
     image:
       "https://design4users.com/wp-content/uploads/2021/01/photo_service_landing_page_design_tubik.png",
   },
+  {
+    title: "E-Commerce Platform",
+    description:
+      "A fully functional online store with advanced features like product filtering, cart, and payment integration.",
+    technologies: ["React", "Node.js", "Tailwind CSS"],
+    link: "#",
+    image: "./img/digAgency.png",
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "A sleek and modern portfolio site showcasing creative work and accomplishments.",
+    technologies: ["Next.js", "Framer Motion", "ShadCN"],
+    link: "#",
+    image:
+      "https://design4users.com/wp-content/uploads/2017/12/dance_academy_website_interactions_tubik.gif",
+  },
+  {
+    title: "Blog Platform",
+    description:
+      "A scalable platform for creating and managing blogs with rich text editing and user authentication.",
+    technologies: ["Vue.js", "Firebase", "CSS Modules"],
+    link: "#",
+    image:
+      "https://blog.tubikstudio.com/wp-content/uploads/2017/01/book_and_travel_website_tubik.png",
+  },
+  {
+    title: "Social Media App",
+    description:
+      "A cross-platform social media application with real-time chat and dynamic feed features.",
+    technologies: ["React Native", "Redux", "Expo"],
+    link: "#",
+    image:
+      "https://blog.tubikstudio.com/wp-content/uploads/2019/06/health_blog_webdesign_tubik-1024x768.png",
+  },
 ];
 
 function PreviousWork() {

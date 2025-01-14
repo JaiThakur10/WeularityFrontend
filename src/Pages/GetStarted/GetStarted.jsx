@@ -395,7 +395,7 @@ const UserForm = () => {
 
               <button
                 type="submit"
-                className="bg-[#60A5FA] text-black mt-20 w-full h-16 rounded-full text-3xl hover:bg-black hover:border-[#60A5FA] hover:text-white font-bold hover:border-2 disabled={isSubmitting}"
+                className="bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-black mt-20 w-full h-16 rounded-full text-3xl hover:bg-black hover:border-[#60A5FA] hover:text-white font-bold hover:border-2 disabled={isSubmitting}"
               >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </button>

@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.min.css";
+import { useNavigate } from "react-router-dom";
+import SubscribeButton from "../SubscriptionButton/SubscriptionButton";
 
 function Footer() {
+  const navigate = useNavigate();
   return (
     <footer className="relative bg-black text-white py-20 px-8 overflow-hidden">
       {/* Background Decorations */}
@@ -29,7 +32,10 @@ function Footer() {
               expertise in design, development, and marketing will bring your
               vision to life.
             </p>
-            <button className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg transition transform hover:scale-105">
+            <button
+              className="mt-6 px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white font-semibold rounded-lg shadow-lg transition transform hover:scale-105"
+              onClick={() => navigate("/getStarted")}
+            >
               Let's Work Together
             </button>
           </motion.div>
@@ -105,12 +111,7 @@ function Footer() {
                 placeholder="Enter your email"
                 className="w-full sm:w-auto px-4 py-3 bg-black text-white border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
               />
-              <button
-                type="submit"
-                className="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white font-bold rounded-lg transform hover:scale-105 transition duration-300"
-              >
-                Subscribe
-              </button>
+              <SubscribeButton />
             </form>
           </motion.div>
 

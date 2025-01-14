@@ -10,8 +10,12 @@ import Testimonial from "../Testimonial/Testimonial";
 import WhyChooseUs from "../WhyChooseUs/WhyChooseUs";
 import Hit from "../Hit.jsx/Hit";
 import HeroAbout from "../HeroAbout/HeroAbout";
+import { useNavigate } from "react-router-dom";
+import useScrollTop from "@/Hooks/UseScrollTop/UseScrollTop";
 
 export default function Home() {
+  const navigate = useNavigate();
+  useScrollTop();
   return (
     <div className="font-sans scroll-smooth px-8 bg-black ">
       {/* hero */}
@@ -78,12 +82,14 @@ export default function Home() {
             whileHover={{ scale: 1.1 }}
           >
             <motion.button
-              className="bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white py-3 px-8 rounded-lg shadow-lg"
+              className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 text-white py-3 px-8 rounded-lg shadow-lg"
               whileHover={{ scale: 1.1 }}
               transition={{ duration: 0.3 }}
+              onClick={() => navigate("/getStarted")} // Navigate to /getStarted
             >
               Get Started
             </motion.button>
+            );
           </motion.div>
         </motion.div>
 

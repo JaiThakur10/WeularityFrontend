@@ -80,3 +80,106 @@ export default function DesktopMenu() {
     </div>
   );
 }
+
+// code here
+<div className="hidden lg:flex lg:order-1">
+  <NavigationMenu>
+    <NavigationMenuList className="flex space-x-8">
+      {/* Services */}
+      <NavigationMenuItem>
+        <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
+          Services
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[200px]">
+          <ul className="flex space-x-44 border-b-2 border-black pb-4 ">
+            <li className="hover:text-orange-500 transition-all ">
+              <Link
+                to="/webflow"
+                className="text-lg font-semibold relative group"
+              >
+                Web Design
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+            <li className="hover:text-orange-500 transition-all">
+              <Link
+                to="/webflow"
+                className="text-lg font-semibold relative group"
+              >
+                SEO Optimization
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+            <li className="hover:text-orange-500 transition-all">
+              <Link
+                to="/webflow"
+                className="text-lg font-semibold relative group"
+              >
+                UI/UX Design
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+
+      {/* Work */}
+      <NavigationMenuItem>
+        <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
+          Work
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4  h-[200px]">
+          <ul className="flex space-x-56 border-b-2 border-black pb-4">
+            <li className="hover:text-orange-500 transition-all">
+              <Link
+                to="/previouswork"
+                className="text-lg font-semibold relative group"
+              >
+                Portfolio Showcase
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+            <li className="hover:text-orange-500 transition-all">
+              <Link
+                to="/previouswork"
+                className="text-lg font-semibold relative group"
+              >
+                Case Studies
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+
+      {/* Agency */}
+      <NavigationMenuItem>
+        <NavigationMenuTrigger className="text-white bg-transparent hover:text-orange-500 transition-all">
+          Agency
+        </NavigationMenuTrigger>
+        <NavigationMenuContent className="absolute z-50 mt-2 rounded-lg shadow-lg p-4 h-[200px]">
+          <ul className="flex space-x-56 border-b-2 border-black pb-4">
+            <li className="hover:text-orange-500 transition-all">
+              <Link
+                to="/about"
+                className="text-lg font-semibold relative group"
+              >
+                About Us
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+            <li className="hover:text-orange-500 transition-all">
+              <Link
+                to="/contact"
+                className="text-lg font-semibold relative group"
+              >
+                Our Team
+                <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-orange-500 transition-all group-hover:w-full"></span>
+              </Link>
+            </li>
+          </ul>
+        </NavigationMenuContent>
+      </NavigationMenuItem>
+    </NavigationMenuList>
+  </NavigationMenu>
+</div>;

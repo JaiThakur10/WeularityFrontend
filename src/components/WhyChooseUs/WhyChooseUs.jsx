@@ -1,8 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { CheckCircle, Star, Award, ShieldCheck, Smile } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function WhyChooseUs() {
+  const navigate = useNavigate();
   return (
     <div className="min-h-screen flex flex-col items-center bg-black text-white">
       {/* Hero Section */}
@@ -30,6 +32,7 @@ export default function WhyChooseUs() {
             className="bg-purple-600 hover:bg-purple-700 text-white py-3 px-8 rounded-lg shadow-lg"
             whileHover={{ scale: 1.1 }}
             transition={{ duration: 0.3 }}
+            onClick={() => navigate("/webflow")}
           >
             Learn More
           </motion.button>
@@ -143,6 +146,7 @@ export default function WhyChooseUs() {
           className="bg-gradient-to-r from-purple-500 to-pink-500  hover:from-pink-500 hover:to-purple-500 text-white py-3 px-8 rounded-lg shadow-lg"
           whileHover={{ scale: 1.1 }}
           transition={{ duration: 0.3 }}
+          onClick={() => navigate("/webflow")}
         >
           Get Started
         </motion.button>

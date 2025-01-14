@@ -5,33 +5,41 @@ import { ArrowRight } from "lucide-react";
 
 const projects = [
   {
-    title: "YP Gold Spices",
+    title: "E-Commerce Platform",
     description:
-    "A fully functional online spices store with features like bulking order, navigation to online stores and whatsapp integration",
-  technologies: ["React", "Node.js", "Tailwind CSS"],
-  link: "https://www.ypgoldspices.com/",
-  image:
-"./img/ypgold.png",
+      "A fully functional online store with advanced features like product filtering, cart, and payment integration.",
+    technologies: ["React", "Node.js", "Tailwind CSS"],
+    link: "#",
+    image:
+      "https://design4users.com/wp-content/uploads/2021/01/photo_service_landing_page_design_tubik.png",
   },
   {
     title: "Portfolio Website",
     description:
-      "Crafted a bespoke portfolio showcasing our client's unique skills and achievements—designed to leave a lasting impression.",
+      "A sleek and modern portfolio site showcasing creative work and accomplishments.",
     technologies: ["Next.js", "Framer Motion", "ShadCN"],
-    link: "https://gportfolio-92jl.vercel.app/",
+    link: "#",
     image:
-      "./img/gayatri_portfolio.png",
+      "https://design4users.com/wp-content/uploads/2017/12/dance_academy_website_interactions_tubik.gif",
   },
   {
-    title: "Dental Clinic Website",
+    title: "Blog Platform",
     description:
-      "A sleek and modern technical site showcasing creative work and accomplishments in creating a Dental Clinic site",
+      "A scalable platform for creating and managing blogs with rich text editing and user authentication.",
     technologies: ["Vue.js", "Firebase", "CSS Modules"],
     link: "#",
     image:
-      "./img/Dental.png",
+      "https://blog.tubikstudio.com/wp-content/uploads/2017/01/book_and_travel_website_tubik.png",
   },
-  
+  {
+    title: "Social Media App",
+    description:
+      "A cross-platform social media application with real-time chat and dynamic feed features.",
+    technologies: ["React Native", "Redux", "Expo"],
+    link: "#",
+    image:
+      "https://blog.tubikstudio.com/wp-content/uploads/2019/06/health_blog_webdesign_tubik-1024x768.png",
+  },
 ];
 
 function Portfolio() {

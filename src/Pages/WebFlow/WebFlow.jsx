@@ -5,38 +5,45 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { motion } from "framer-motion";
+import useScrollTop from "@/Hooks/UseScrollTop/UseScrollTop";
 
 const WebFlow = () => {
+  useScrollTop();
   return (
     <div className="min-h-screen flex flex-col items-center bg-black text-white">
-
       <div className="max-w-full mx-auto px-4 py-8 font-sans">
         {/* Header Section */}
         <div className="w-full flex flex-col lg:flex-row items-center justify-between px-4 lg:px-16 py-16 lg:py-20">
-          <motion.div className="lg:w-1/2 text-center lg:text-left"
+          <motion.div
+            className="lg:w-1/2 text-center lg:text-left"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}>
-            <h1 className="text-5xl lg:text-4xl font-extrabold leading-tight mb-6"><span className="text-[#CC4EC5]">Web</span> Development </h1>
+            transition={{ duration: 1 }}
+          >
+            <h1 className="text-5xl lg:text-4xl font-extrabold leading-tight mb-6">
+              <span className="text-[#CC4EC5]">Web</span> Development{" "}
+            </h1>
           </motion.div>
 
           <motion.div
             className="lg:w-1/2 justify-center mt-0 lg:mt-0 "
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}>
+            transition={{ duration: 1 }}
+          >
             <p className="text-lg text-center text-white leading-relaxed mb-6">
-              At our edge tech web service company, we pride ourselves on pushing the
-              boundaries of web development to create highly functional websites. Our
-              team of talented developers brings innovative ideas to life, leveraging
-              the power of Weularity intuitive platform. With Weularity, you get
-              Website Development at its finest.
+              At our edge tech web service company, we pride ourselves on
+              pushing the boundaries of web development to create highly
+              functional websites. Our team of talented developers brings
+              innovative ideas to life, leveraging the power of Weularity
+              intuitive platform. With Weularity, you get Website Development at
+              its finest.
             </p>
             {/* Awards Section */}
             <div className="text-center text-sm text-gray-500 mb-10">
               <span>Reviewed on </span>
-              <strong className="text-gray-800">Google</strong> ⭐⭐⭐⭐⭐ (10 Reviews)
-              &nbsp;|&nbsp;
+              <strong className="text-gray-800">Google</strong> ⭐⭐⭐⭐⭐ (10
+              Reviews) &nbsp;|&nbsp;
               <strong className="text-gray-800">Professional Clients</strong>
               &nbsp;|&nbsp;
               <strong className="text-gray-800">Partners</strong>
@@ -92,9 +99,6 @@ const WebFlow = () => {
             </SwiperSlide>
           </Swiper>
         </div>
-
-
-
       </div>
       {/* webflow Section */}
       <div className="bg-gradient-to-r from-purple-500 to-pink-500 lg:py-52 px-6 text-white">
@@ -104,27 +108,45 @@ const WebFlow = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
             <h3 className="text-2xl font-bold mb-4">Top Website Platform</h3>
-            <p>Webflow is a web development platform that allows developers to create responsive websites quickly without code.</p>
+            <p>
+              Webflow is a web development platform that allows developers to
+              create responsive websites quickly without code.
+            </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">No Code</h3>
-            <p>It's unique because sites are built with no code. This means users can edit the website visually without coding knowledge.</p>
+            <p>
+              It's unique because sites are built with no code. This means users
+              can edit the website visually without coding knowledge.
+            </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Easy to Use</h3>
-            <p>With user-friendly features, your grandma could learn how to use it. We train our clients on how to use their new website.</p>
+            <p>
+              With user-friendly features, your grandma could learn how to use
+              it. We train our clients on how to use their new website.
+            </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">The Future</h3>
-            <p>You heard it here first. It’s increasingly growing in popularity. Big brands are using it because it's fast, reliable, and scalable.</p>
+            <p>
+              You heard it here first. It’s increasingly growing in popularity.
+              Big brands are using it because it's fast, reliable, and scalable.
+            </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Speedy Websites</h3>
-            <p>A quick-loading website is key for user experience and SEO purposes. Webflow allows for fast and consistent websites.</p>
+            <p>
+              A quick-loading website is key for user experience and SEO
+              purposes. Webflow allows for fast and consistent websites.
+            </p>
           </div>
           <div>
             <h3 className="text-2xl font-bold mb-4">Customizable</h3>
-            <p>Beauty is in the customization. Webflow makes it easy to design and build a website exactly how you want it.</p>
+            <p>
+              Beauty is in the customization. Webflow makes it easy to design
+              and build a website exactly how you want it.
+            </p>
           </div>
         </div>
       </div>
